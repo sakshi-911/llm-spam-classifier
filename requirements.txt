@@ -1,3 +1,5 @@
 streamlit
 torch
 tiktoken
+huggingface
+huggingface_hub
