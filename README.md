@@ -36,7 +36,7 @@ def load_model():
 
 ```
 ## 🖥️ Run Locally
-<pre>
+
 ```bash
 git clone https://github.com/sakshi-911/llm-spam-classifier.git
 cd llm-spam-classifier
@@ -45,7 +45,7 @@ conda activate spam-env
 pip install -r requirements.txt
 streamlit run app.py
 ```
-</pre>
+
 
 
 ### Since large models can’t be pushed to GitHub, the .pth file is hosted on Hugging Face:
@@ -60,7 +60,7 @@ hf_hub_download(
 ```
 
 
-<pre>
+
 ```text
 📁 Project Structure
 .
@@ -73,4 +73,4 @@ hf_hub_download(
 ├── requirements.txt
 └── README.md
 ```
-</pre>
+
