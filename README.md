@@ -64,13 +64,24 @@ hf_hub_download(
 ```text
 📁 Project Structure
 .
-├── app.py                # Streamlit UI
-├── model/
-│   ├── gpt_model.py      # GPT model class
-│   └── transformer.py    # Transformer block definition
-├── spam_classifier.pth   # Model weights (ignored in Git)
-├── utils.py              # Helper functions
-├── requirements.txt
-└── README.md
+├── app.py                          # Streamlit UI application
+├── functions/
+│   ├── classify.py                 # Handles spam classification logic
+│   ├── convert.py                  # Utilities for data/token conversion
+│   ├── model/
+│   │   ├── feed_forward.py         # Feed-forward network used in Transformer blocks
+│   │   ├── gelu.py                 # GELU activation function implementation
+│   │   ├── gpt_model.py            # Main GPT model class definition
+│   │   ├── layer_norm.py           # Layer normalization module
+│   │   ├── multihead_attention.py  # Multi-head self-attention mechanism
+│   │   ├── transformer.py          # Transformer block combining attention and feed-forward layers
+│   │   └── __pycache__/            # Cached bytecode files
+│   └── __pycache__/               # Cached bytecode files
+├── model_config/                  # Configuration files for the model
+├── requirements.txt               # Python dependencies
+├── spam_classifier.pth           # Trained model weights (ignored in github)
+├── upload.py                      # File upload handling logic
+├── .gitignore                     # Git ignore rules
+└── llm-spam-classifier.code-workspace  # VS Code workspace file
 ```
 
