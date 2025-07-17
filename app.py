@@ -1,6 +1,7 @@
 import torch
 import tiktoken
 import streamlit as st
+from huggingface_hub import hf_hub_download
 
 from model import gpt_model
 from model_config import model_config
@@ -16,15 +17,21 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 @st.cache_resource
 def load_model():
+    model_path = hf_hub_download(
+        repo_id="sakshi-911/spam-classifier", 
+        filename="spam_classifier.pth",        
+        repo_type="model"                      
+    )
+
     model = gpt_model(cfg)
     model.out_head = torch.nn.Linear(in_features=cfg["emb_dim"], out_features=2)
-    
+
     for param in model.trf_blocks[-1].parameters():
         param.requires_grad = True
     for param in model.final_norm.parameters():
         param.requires_grad = True
 
-    model.load_state_dict(torch.load("spam_classifier.pth", map_location="cpu"))
+    model.load_state_dict(torch.load(model_path, map_location="cpu"))
     model.eval()
     return model
 
