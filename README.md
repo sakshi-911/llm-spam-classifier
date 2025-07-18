@@ -68,16 +68,15 @@ hf_hub_download(
 ├── functions/
 │   ├── classify.py                 # Handles spam classification logic
 │   ├── convert.py                  # Utilities for data/token conversion
-│   ├── model/
-│   │   ├── feed_forward.py         # Feed-forward network used in Transformer blocks
-│   │   ├── gelu.py                 # GELU activation function implementation
-│   │   ├── gpt_model.py            # Main GPT model class definition
-│   │   ├── layer_norm.py           # Layer normalization module
-│   │   ├── multihead_attention.py  # Multi-head self-attention mechanism
-│   │   ├── transformer.py          # Transformer block combining attention and feed-forward layers
-│   │   └── __pycache__/            # Cached bytecode files
-│   └── __pycache__/               # Cached bytecode files
+├── model/
+│   ├── feed_forward.py         # Feed-forward network used in Transformer blocks
+│   ├── gelu.py                 # GELU activation function implementation
+│   ├── gpt_model.py            # Main GPT model class definition
+│   ├── layer_norm.py           # Layer normalization module
+│   ├── multihead_attention.py  # Multi-head self-attention mechanism
+│   ├── transformer.py          # Transformer block combining attention and feed-forward layers
 ├── model_config/                  # Configuration files for the model
+│   ├── model_config.py
 ├── requirements.txt               # Python dependencies
 ├── spam_classifier.pth           # Trained model weights (ignored in github)
 ├── upload.py                      # File upload handling logic
